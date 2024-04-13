@@ -2,11 +2,15 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
+      - echo Installing Git and Maven softwares
+      - yum install git -y
+      - yum install maven -y
   build:
     commands:
-      - echo Build started on `date`
+      - echo Maven Build started on `date`
+      - mvn clean install
   post_build:
     commands:
       - echo Build completed on `date`
-      - echo Pushing the Docker images
+      - echo checking build files
+      - ls -l target
