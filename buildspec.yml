@@ -5,12 +5,17 @@ phases:
       - echo Installing Git and Maven softwares
       - yum install git -y
       - yum install maven -y
+      - whoami
+      - which .m2
+
   build:
     commands:
       - echo Maven Build started on `date`
-      - mvn clean install
+      - mvn validate
   post_build:
     commands:
       - echo Build completed on `date`
       - echo checking build files
-      - ls -l target
+      - ls -l
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain test --domain-owner 381556812150 --region ap-south-1 --query authorizationToken --output text`
+      - mvn deploy
