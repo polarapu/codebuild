@@ -18,4 +18,11 @@
   <build>
     <finalName>devops101</finalName>
   </build>
+  <distributionManagement>
+  <repository>
+    <id>test-sample-repo1</id>
+    <name>test-sample-repo1</name>
+    <url>https://test-381556812150.d.codeartifact.ap-south-1.amazonaws.com/maven/sample-repo1/</url>
+  </repository>
+  </distributionManagement>
 </project>
