@@ -1,0 +1,21 @@
+<servers>
+  <server>
+    <id>test-sample-repo1</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+  <profiles>
+  <profile>
+    <id>test-sample-repo1</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>test-sample-repo1</id>
+        <url>https://test-381556812150.d.codeartifact.ap-south-1.amazonaws.com/maven/sample-repo1/</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+</servers>
