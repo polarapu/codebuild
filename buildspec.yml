@@ -16,5 +16,5 @@ phases:
       - echo Build completed on `date`
       - echo checking build files
       - ls -l target
-      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain test --domain-owner 381556812150 --region ap-south-1 --query authorizationToken --output text`
+      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain prasad --domain-owner 730335590865 --region us-east-1 --query authorizationToken --output text`
       - mvn deploy
