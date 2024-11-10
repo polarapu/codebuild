@@ -4,14 +4,12 @@ phases:
     commands:
       - echo Installing Git and Maven softwares
       - yum install git -y
-      - yum install maven -y
       - cp settings.xml /root/.m2
       - docker --version
 
   build:
     commands:
       - echo Maven Build started on `date`
-      - mvn clean install
   post_build:
     commands:
       - echo Build completed on `date`
