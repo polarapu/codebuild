@@ -6,7 +6,7 @@ phases:
       - yum install git -y
       - yum install maven -y
       - cp settings.xml /root/.m2
-      - yum install docker* -y
+      - docker --version
 
   build:
     commands:
