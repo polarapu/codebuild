@@ -11,3 +11,4 @@ phases:
       - docker build -t testecrrpo .
       - docker images
       - docker tag testecrrpo:latest 156041422561.dkr.ecr.ap-south-1.amazonaws.com/testecrrpo:latest
+      - docker push 156041422561.dkr.ecr.ap-south-1.amazonaws.com/testecrrpo:latest
