@@ -18,12 +18,4 @@
     </repositories>
   </profile>
 </profiles>
-<mirrors>
-  <mirror>
-    <id>test-artifact-Test-artifact</id>
-    <name>test-artifact-Test-artifact</name>
-    <url>https://test-artifact-156041422561.d.codeartifact.ap-south-1.amazonaws.com/maven/Test-artifact/</url>
-    <mirrorOf>*</mirrorOf>
-  </mirror>
-</mirrors>
 </servers>
