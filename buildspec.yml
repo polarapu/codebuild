@@ -11,4 +11,6 @@ phases:
   build:
     commands:
       - echo Maven Build started on `date`
-      - mvn clean install deploy
+      - mvn clean install
+      - ls -l target
+      - mvn deploy
