@@ -3,14 +3,11 @@ phases:
   pre_build:
     commands:
       - echo Installing Git and Maven softwares
-      - yum install git -y
-      - cp settings.xml /root/.m2
       - docker --version
-      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain test-artifact --domain-owner 156041422561 --region ap-south-1 --query authorizationToken --output text`
-
   build:
     commands:
-      - echo Maven Build started on `date`
-      - mvn clean install
-      - ls -l target
-      - mvn deploy
+      - echo docker images upload
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 156041422561.dkr.ecr.ap-south-1.amazonaws.com
+      - docker build -t testecrrpo .
+      - docker images
+      - docker tag testecrrpo:latest 156041422561.dkr.ecr.ap-south-1.amazonaws.com/testecrrpo:latest
