@@ -1,0 +1,21 @@
+<servers>
+  <server>
+    <id>prasad-artifact1</id>
+    <username>aws</username>
+    <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+  </server>
+  <profiles>
+  <profile>
+    <id>prasad-artifact1</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <repositories>
+      <repository>
+        <id>prasad-artifact1</id>
+        <url>https://prasad-730335590865.d.codeartifact.us-east-1.amazonaws.com/maven/artifact1/</url>
+      </repository>
+    </repositories>
+  </profile>
+</profiles>
+</servers>

@@ -18,11 +18,11 @@
   <build>
     <finalName>devops101</finalName>
   </build>
-<distributionManagement>
+  <distributionManagement>
   <repository>
-    <id>test-artifact-Test-artifact</id>
-    <name>test-artifact-Test-artifact</name>
-    <url>https://test-artifact-156041422561.d.codeartifact.ap-south-1.amazonaws.com/maven/Test-artifact/</url>
+    <id>prasad-artifact1</id>
+    <name>prasad-artifact1</name>
+    <url>https://prasad-730335590865.d.codeartifact.us-east-1.amazonaws.com/maven/artifact1/</url>
   </repository>
-</distributionManagement>
+  </distributionManagement>
 </project>

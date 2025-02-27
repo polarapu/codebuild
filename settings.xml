@@ -1,21 +1,29 @@
 <servers>
   <server>
-    <id>prasad-artifact1</id>
+    <id>test-artifact-Test-artifact</id>
     <username>aws</username>
     <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
   </server>
   <profiles>
   <profile>
-    <id>prasad-artifact1</id>
+    <id>test-artifact-Test-artifact</id>
     <activation>
       <activeByDefault>true</activeByDefault>
     </activation>
     <repositories>
       <repository>
-        <id>prasad-artifact1</id>
-        <url>https://prasad-730335590865.d.codeartifact.us-east-1.amazonaws.com/maven/artifact1/</url>
+        <id>test-artifact-Test-artifact</id>
+        <url>https://test-artifact-156041422561.d.codeartifact.ap-south-1.amazonaws.com/maven/Test-artifact/</url>
       </repository>
     </repositories>
   </profile>
 </profiles>
+<mirrors>
+  <mirror>
+    <id>test-artifact-Test-artifact</id>
+    <name>test-artifact-Test-artifact</name>
+    <url>https://test-artifact-156041422561.d.codeartifact.ap-south-1.amazonaws.com/maven/Test-artifact/</url>
+    <mirrorOf>*</mirrorOf>
+  </mirror>
+</mirrors>
 </servers>
