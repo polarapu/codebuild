@@ -3,12 +3,18 @@ phases:
   pre_build:
     commands:
       - echo Installing Git and Maven softwares
+      - yum install git -y
+      - cp settings.xml /root/.m2
       - docker --version
+
   build:
     commands:
-      - echo docker images upload
+      - echo Maven Build started on `date`
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo checking build files
       - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 156041422561.dkr.ecr.ap-south-1.amazonaws.com
-      - docker build -t testecrrpo .
-      - docker images
-      - docker tag testecrrpo:latest 156041422561.dkr.ecr.ap-south-1.amazonaws.com/testecrrpo:latest
-      - docker push 156041422561.dkr.ecr.ap-south-1.amazonaws.com/testecrrpo:latest
+      - docker build -t batch111 .
+      - docker tag batch111:latest 156041422561.dkr.ecr.ap-south-1.amazonaws.com/batch111:latest
+      - docker push 156041422561.dkr.ecr.ap-south-1.amazonaws.com/batch111:latest
