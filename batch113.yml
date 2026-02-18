@@ -3,14 +3,17 @@ phases:
   pre_build:
     commands:
       - echo Installing Git and Maven softwares
-      - yum install git -y
-      - mvn --version
+      - git --version
+      - docker --version
+
   build:
     commands:
-      - echo git clone `date`
-      - git clone https://github.com/polarapu/maven-project1.git
+      - echo Maven Build started on `date`
   post_build:
     commands:
       - echo Build completed on `date`
       - echo checking build files
-      - mvn clean install
+      - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 104423791071.dkr.ecr.ap-south-1.amazonaws.com
+      - docker build -t polarapu/batch113 .
+      - docker tag polarapu/batch113:latest 104423791071.dkr.ecr.ap-south-1.amazonaws.com/polarapu/batch113:latest
+      - docker push 104423791071.dkr.ecr.ap-south-1.amazonaws.com/polarapu/batch113:latest
