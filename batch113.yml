@@ -5,7 +5,7 @@ phases:
       - echo Installing Git and Maven softwares
       - yum install git -y
       - mvn --version
-  test-clone:
+  build:
     commands:
       - echo git clone `date`
       - git clone https://github.com/polarapu/maven-project1.git
