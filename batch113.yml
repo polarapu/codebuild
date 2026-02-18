@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo Installing Git and Maven softwares
+      - yum install git -y
+      - mvn --version
+  Clone:
+    commands:
+      - echo git clone `date`
+      - git clone https://github.com/polarapu/maven-project1.git
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo checking build files
+      - mvn clean install
